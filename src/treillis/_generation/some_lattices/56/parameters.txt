@@ -1,0 +1,5 @@
+size	[100, 100]
+L	8
+mesh	Tri
+ratio	16
+section	Circular

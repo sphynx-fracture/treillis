@@ -1,0 +1,274 @@
+{
+ "DT": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.spatial._qhull",
+   "module_short": "scipy.spatial",
+   "name": "Delaunay"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.spatial",
+   "module_short": "scipy.spatial",
+   "name": "Delaunay"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy",
+   "module_short": "scipy",
+   "name": "Delaunay"
+  }
+ ],
+ "DT.simplices": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "DT.simplices.ravel": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "Delaunay": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy.spatial._qhull",
+   "module_short": "scipy.spatial",
+   "name": "Delaunay"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy.spatial",
+   "module_short": "scipy.spatial",
+   "name": "Delaunay"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy",
+   "module_short": "scipy",
+   "name": "Delaunay"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy.spatial._qhull",
+   "module_short": "scipy.spatial._qhull",
+   "name": "_QhullUser"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy.spatial",
+   "module_short": "scipy.spatial",
+   "name": "_QhullUser"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "scipy",
+   "module_short": "scipy",
+   "name": "_QhullUser"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "scipy.spatial",
+   "module_short": "scipy.spatial",
+   "name": "Delaunay"
+  }
+ ],
+ "cd.showlat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis.display.clean",
+   "module_short": "treillis.display.clean",
+   "name": "showlat"
+  }
+ ],
+ "e1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "e1.reshape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "e2": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "e2.reshape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "lat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis._generation.lattices",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis._generation",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "Lattice"
+  }
+ ],
+ "links": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "np.concatenate": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "concatenate"
+  }
+ ],
+ "np.random.default_rng": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "_cython_3_2_4",
+   "module_short": "_cython_3_2_4",
+   "name": "cython_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy.random",
+   "module_short": "numpy.random",
+   "name": "default_rng"
+  }
+ ],
+ "np.roll": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "_ArrayFunctionDispatcher"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "roll"
+  }
+ ],
+ "points": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "points.mean": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "treillis.Lattice": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "treillis._generation.lattices",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "treillis._generation",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "Lattice"
+  }
+ ]
+}

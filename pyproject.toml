@@ -1,0 +1,129 @@
+[tool.pixi.package]
+name = "treillis"
+version = "1.0"
+
+[tool.pixi.package.build]
+backend = { name = "pixi-build-python", version = "*" }
+config = { env = { SETUPTOOLS_SCM_PRETEND_VERSION = "1.0.0" } }
+
+[tool.pixi.package.host-dependencies]
+python = ">=3.11,<=3.14"
+hatchling = '*'
+setuptools = '*'
+
+[workspace]
+name = "treillis"
+description = "A comprehensive library to generate and simulate 2D/3D microlattices."
+authors = ["Antoine Montiel", "Elina Gilbert", "Thibaud Derieux","Daniel Bonamy","Aurelien Mur"]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64"]
+preview = ["pixi-build"]
+
+[project]
+  name = "treillis"
+  version = "1.0"
+  license = "LGPL-3.0"
+  license-files = ["LICENSE"]
+  description = "A comprehensive library to generate and simulate 2D/3D microlattices."
+  readme = {file = "docs/source/install.md", content-type = "text/markdown"}
+  authors = [
+    {name = "Antoine Montiel"},
+	{name = "Elina Gilbert", email = "elina.gilbert@cea.fr"},
+	{name = "Thibaud Derieux"},
+	{name = "Daniel Bonamy", email = "daniel.bonamy@cea.fr"},
+   {name= "Aurélien Mur"},
+  ]
+  maintainers = [
+  {name = "Elina Gilbert", email = "elina.gilbert@cea.fr"},
+  ]
+  requires-python = ">=3.11,<=3.14"
+  classifiers = [
+	# How mature is this project? Common values are
+	"Development Status :: 3 - Alpha",
+	#   4 - Beta
+	#   5 - Production/Stable
+	#	"Development Status :: 4 - Beta",
+
+	# Indicate who your project is intended for
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+	"Operating System :: Microsoft :: Windows",
+	# Specify the Python versions you support here.
+	"Programming Language :: Python",
+]
+
+[dependency-groups]
+test = ["pytest", "tatva"]
+docs = [
+  "sphinx",
+  "myst-parser",
+  "sphinx-gallery",
+  "nbsphinx",
+  "pydata-sphinx-theme",
+  "deflist",
+  "replacements",
+  "tasklist",
+  "sphinx-copybutton",
+  "sphinx-design",
+  "numpydoc",
+  "sphobjinv",
+  "sphinx-tabs",
+  ]
+dev = [{include-group = "test"}, {include-group = "docs"}, "setuptools", "uv", "grayskull"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64"]
+preview = ["pixi-build"]
+
+[tool.pixi.dependencies]
+spyder-kernels = "==3.1"
+matplotlib = "*"
+numba = "<0.66"
+numpy = "<2.5"
+pandas = "*"
+scipy = "*"
+scikit-sparse = "*"
+ipyparallel = "*"
+ipykernel = '*'
+pytables = '*'
+tqdm = '*'
+meshio = '*'
+# cupy = '*'
+# cuda-nvcc = '*'
+
+[tool.pixi.pypi-dependencies]
+treillis = { path = ".", editable = true }
+dill = "*"
+datoviz = "*"
+# tatva = '*'
+
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
+docs = { features = ["docs"], solve-group = "default" }
+test = { features = ["test"], solve-group = "default" }
+
+[tool.pixi.tasks]
+run = "pixi run python -m ipykernel install --user --name treillis-pixi --display-name 'treillis'"
+
+
+[tool.conda-deny]
+#--------------------------------------------------------
+# General setup options:
+#--------------------------------------------------------
+license-allowlist = "https://raw.githubusercontent.com/Quantco/conda-deny/refs/heads/main/tests/default_license_allowlist.toml" # or ["license_allowlist.toml", "other_license_allowlist.toml"]
+platform = ["win-64", "linux-64"] # or ["linux-64", "osx-arm64"]
+environment = "default" # or ["default", "py39", "py310", "prod"]
+lockfile = "environment/pixi.lock" # or ["environment1/pixi.lock", "environment2/pixi.lock"]
+# lockfile also supports glob patterns:
+# lockfile = "environments/**/*.lock"
+
+#--------------------------------------------------------
+# License allowlist directly in configuration file:
+#--------------------------------------------------------
+safe-licenses = ["MIT", "BSD-3-Clause"]
+ignore-packages = [
+    { package = "make", version = "0.1.0" },
+]

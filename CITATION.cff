@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Montiel"
+    given-names: "Antoine"
+  - family-names: "Gilbert"
+    given-names: "Elina"
+    orcid: "https://orcid.org/0009-0003-7255-0941"
+  - family-names: "Derieux"
+    given-names: "Thibaud"
+  - family-names: "Bonamy"
+    given-names: "Daniel"
+    orcid: "https://orcid.org/0000-0002-7836-4395"
+title: "treillis"
+version: "1.0.0"
+date-released: 2026
+license: "LGPL-3.0-only"

@@ -1,0 +1,5 @@
+size	[140, 100, 19.5, 40, 28]
+L	6
+mesh	Octet
+ratio	12
+section	Circular

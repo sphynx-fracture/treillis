@@ -1,0 +1,23 @@
+![treillis logo](docs/source/_static/logo.png)
+
+# *treillis*: lattices generation and simulation
+
+*treillis* (/tʁɛji/, French for truss) is a Python library built to help researchers and whoever is interested in microlattices. It provides tools to modelize 2D and 3D microlattices, to compute their elastic properties as well as calculate stresses, strains and elastic constants.
+It was written by experimental physicists with the language that they know, and may need some optimization work, but aims at being as easy to use and iterate on as possible.
+
+*treillis* offers tools to
+- generate lattices from different periodic or random base meshes
+- modify lattice structures by playing with the connectivity, the element shape, the node position...
+- display lattices in paper-quality figures or in interactive 3D figures
+- apply solid mechanics models to the lattices by treating them as basic meshes
+
+
+License
+-------
+
+*treillis* is under a GNU lesser general public license v3.0. See [LICENSE].
+
+Citation
+--------
+
+If you use this library, please kindly cite us! See the [CITATION](CITATION.cff) file.

@@ -1,0 +1,125 @@
+{
+ "cd.colorlat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis.display.clean",
+   "module_short": "treillis.display.clean",
+   "name": "colorlat"
+  }
+ ],
+ "fd.previz": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis.display.fast",
+   "module_short": "treillis.display.fast",
+   "name": "previz"
+  }
+ ],
+ "lat": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis._generation.lattices",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis._generation",
+   "module_short": "treillis",
+   "name": "Lattice"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "Lattice"
+  }
+ ],
+ "lat.aspect_ratio": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "mapped": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "mapped.mean": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "pos": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "treillis.loadLattice": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "loadLattice"
+  }
+ ],
+ "treillis.mapping": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "treillis",
+   "module_short": "treillis",
+   "name": "mapping"
+  }
+ ]
+}

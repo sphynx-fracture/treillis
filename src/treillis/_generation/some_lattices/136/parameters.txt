@@ -1,0 +1,5 @@
+size	[100, 100, 52]
+L	12
+mesh	TriDT3D
+ratio	28
+section	Circular

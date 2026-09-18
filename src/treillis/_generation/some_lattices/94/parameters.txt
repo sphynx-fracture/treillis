@@ -1,0 +1,5 @@
+size	[71, 71, 36]
+L	4
+mesh	Octet
+ratio	4
+section	Circular
