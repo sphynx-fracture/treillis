@@ -1,5 +1,0 @@
-size	[40, 40, 40]
-L	2.5
-mesh	Octa
-ratio	5
-section	Circular

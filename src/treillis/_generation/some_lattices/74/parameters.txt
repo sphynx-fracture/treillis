@@ -1,5 +1,0 @@
-size	[97, 97]
-L	2
-mesh	TriDT/Vor
-ratio	5
-section	Circular

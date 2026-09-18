@@ -1,5 +1,0 @@
-size	[100, 100, 50]
-L	3
-mesh	Octet
-ratio	6
-section	Circular
