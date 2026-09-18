@@ -6,9 +6,10 @@ Whatever your installation method and IDE, we heavily recommend creating a dedic
 
 ## Using Pixi
 ### Installing treillis
+
 This is the fastest and easiest way to get *treillis* running, but you need to have [Pixi](https://pixi.prefix.dev/latest/installation/) installed first.
 
-Once Pixi is installed, go to the root of the folder in which you have loaded *treillis*, where you have the files `pyproject.toml` and `pixi.lock`, and open a command line here. In the command run either
+Clone *treillis* locally and once Pixi is installed, go to the root of the folder in which you have loaded *treillis*, where you have the files `pyproject.toml` and `pixi.lock`, and open a command line here. In the command run either
 
 ```
 pixi shell
