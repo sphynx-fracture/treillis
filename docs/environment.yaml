@@ -1,0 +1,21 @@
+# environment.yml
+name: treillis-docs
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - sphinx
+  - myst-parser
+  - sphinx-gallery
+  - nbsphinx
+  - pydata-sphinx-theme
+  - deflist
+  - replacements
+  - tasklist
+  - sphinx-copybutton
+  - sphinx-design
+  - numpydoc
+  - sphobjinv
+  - sphinx-tabs
+  
