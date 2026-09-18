@@ -15,7 +15,7 @@ It was written by experimental physicists with the language that they know, and 
 License
 -------
 
-*treillis* is under a GNU lesser general public license v3.0. See [LICENSE].
+*treillis* is under a GNU lesser general public license v3.0. See [LICENSE](LICENSE).
 
 Citation
 --------
