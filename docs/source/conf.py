@@ -36,9 +36,12 @@ templates_path = ['_templates']
 numpydoc_use_plots = False
 numpydoc_xref_param_type = True
 
-asyncio.set_event_loop_policy(
-    asyncio.WindowsSelectorEventLoopPolicy()
-    )
+try:
+    asyncio.set_event_loop_policy(
+        asyncio.WindowsSelectorEventLoopPolicy()
+        )
+except:
+    42
  
 # MYST ------------------------------------------------------------------------
 source_suffix = {
