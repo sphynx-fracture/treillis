@@ -11,6 +11,10 @@ It was written by experimental physicists with the language that they know, and 
 - display lattices in paper-quality figures or in interactive 3D figures
 - apply solid mechanics models to the lattices by treating them as basic meshes
 
+Documentation
+-------------
+
+Find the *treillis* documentation [here](https://treillis.readthedocs.io/en/latest/).
 
 License
 -------
