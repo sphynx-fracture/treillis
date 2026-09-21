@@ -11,17 +11,24 @@ It was written by experimental physicists with the language that they know, and 
 - display lattices in paper-quality figures or in interactive 3D figures
 - apply solid mechanics models to the lattices by treating them as basic meshes
 
-Documentation
--------------
+## Install
+### Pypi
+Create a new environment and copy
+``
+pip install treillis==1.0
+``
+
+## Documentation
+
 
 Find the *treillis* documentation [here](https://treillis.readthedocs.io/en/latest/).
 
-License
--------
+## License
+
 
 *treillis* is under a GNU lesser general public license v3.0. See [LICENSE](LICENSE).
 
-Citation
---------
+## Citation
+
 
 If you use this library, please kindly cite us! See the [CITATION](CITATION.cff) file.

@@ -2,9 +2,13 @@
 name = "treillis"
 version = "1.0"
 
-[tool.pixi.package.build]
-backend = { name = "pixi-build-python", version = "*" }
-config = { env = { SETUPTOOLS_SCM_PRETEND_VERSION = "1.0.0" } }
+[tool.pixi.package.build.backend]
+name = "pixi-build-python"
+# channels = ["https.prefx.dev/conda-forge"]
+
+[tool.pixi.package.build.config]
+env = { SETUPTOOLS_SCM_PRETEND_VERSION = "1.0.0" }
+# ignore-pypi-mapping = true
 
 [tool.pixi.package.host-dependencies]
 python = ">=3.11,<=3.14"
@@ -69,7 +73,7 @@ docs = [
   "sphobjinv",
   "sphinx-tabs",
   ]
-dev = [{include-group = "test"}, {include-group = "docs"}, "setuptools", "uv", "grayskull"]
+dev = [{include-group = "test"}, {include-group = "docs"}, "setuptools", "uv", "grayskull", "anaconda-client", "twine"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]
