@@ -9,10 +9,12 @@ build:
   os: ubuntu-24.04
   tools:
     python: mambaforge-latest
-  commands:
-    - mamba install -c conda-forge -c nodefaults pixi
-    - pixi lock
-    - pixi shell -e docs
+  jobs:
+    pre-builds:
+      - mamba install -c conda-forge -c nodefaults pixi
+      - pixi install -e docs
+    # - pixi run docs
+    # - pixi run readthedocs
     # You can also specify other tool versions:
     # nodejs: "20"
     # rust: "1.70"
@@ -20,6 +22,7 @@ build:
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
+  builder: html
   configuration: docs/source/conf.py
   # You can configure Sphinx to use a different builder, for instance use the dirhtml builder for simpler URLs
   # builder: "dirhtml"
