@@ -6,12 +6,50 @@ Author: Antoine Montiel, Thibaud Derieux, Aurélien Mur
 Author-email: Elina Gilbert <elina.gilbert@cea.fr>, Daniel Bonamy <daniel.bonamy@cea.fr>
 Maintainer-email: Elina Gilbert <elina.gilbert@cea.fr>
 License-Expression: LGPL-3.0
+Project-URL: Homepage, https://github.com/sphynx-fracture/treillis
+Project-URL: Documentation, https://treillis.readthedocs.io/en/latest/
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Science/Research
 Classifier: Topic :: Scientific/Engineering
 Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
 Classifier: Programming Language :: Python
 Requires-Python: <=3.14,>=3.11
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Dynamic: license-file
+
+![treillis logo](docs/source/_static/logo.png)
+
+# *treillis*: lattices generation and simulation
+
+*treillis* (/tʁɛji/, French for truss) is a Python library built to help researchers and whoever is interested in microlattices. It provides tools to modelize 2D and 3D microlattices, to compute their elastic properties as well as calculate stresses, strains and elastic constants.
+It was written by experimental physicists with the language that they know, and may need some optimization work, but aims at being as easy to use and iterate on as possible.
+
+*treillis* offers tools to
+- generate lattices from different periodic or random base meshes
+- modify lattice structures by playing with the connectivity, the element shape, the node position...
+- display lattices in paper-quality figures or in interactive 3D figures
+- apply solid mechanics models to the lattices by treating them as basic meshes
+
+## Install
+### Pypi
+Create a new environment and copy
+``
+pip install treillis==1.0
+``
+
+## Documentation
+
+
+Find the *treillis* documentation [here](https://treillis.readthedocs.io/en/latest/).
+
+## License
+
+
+*treillis* is under a GNU lesser general public license v3.0. See [LICENSE](LICENSE).
+
+## Citation
+
+
+If you use this library, please kindly cite us! See the [CITATION](CITATION.cff) file.

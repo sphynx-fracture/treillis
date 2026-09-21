@@ -1,14 +1,15 @@
 [tool.pixi.package]
 name = "treillis"
 version = "1.0"
+publish = false
 
 [tool.pixi.package.build.backend]
 name = "pixi-build-python"
-channel = "https.prefx.dev/conda-forge"
+# channel = "https.prefix.dev/conda-forge"
 
 [tool.pixi.package.build.config]
 env = { SETUPTOOLS_SCM_PRETEND_VERSION = "1.0.0" }
-# ignore-pypi-mapping = true
+ignore-pypi-mapping = true
 
 [tool.pixi.package.host-dependencies]
 python = ">=3.11,<=3.14"
@@ -29,7 +30,7 @@ preview = ["pixi-build"]
   license = "LGPL-3.0"
   license-files = ["LICENSE"]
   description = "A comprehensive library to generate and simulate 2D/3D microlattices."
-  readme = {file = "docs/source/install.md", content-type = "text/markdown"}
+  readme = "README.md"
   authors = [
     {name = "Antoine Montiel"},
 	{name = "Elina Gilbert", email = "elina.gilbert@cea.fr"},
@@ -52,12 +53,18 @@ preview = ["pixi-build"]
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
 	"Operating System :: Microsoft :: Windows",
+	"Operating System :: POSIX :: Linux",
 	# Specify the Python versions you support here.
 	"Programming Language :: Python",
 ]
 
+
+[project.urls]
+  Homepage = "https://github.com/sphynx-fracture/treillis"
+  Documentation = "https://treillis.readthedocs.io/en/latest/"
+
 [dependency-groups]
-test = ["pytest", "tatva"]
+test = ["pytest"]
 docs = [
   "sphinx",
   "myst-parser",
@@ -73,7 +80,7 @@ docs = [
   "sphobjinv",
   "sphinx-tabs",
   ]
-dev = [{include-group = "test"}, {include-group = "docs"}, "setuptools", "uv", "grayskull", "anaconda-client", "twine"]
+dev = [{include-group = "test"}, {include-group = "docs"}, "setuptools", "uv", "grayskull", "twine"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]
@@ -93,6 +100,7 @@ ipykernel = '*'
 pytables = '*'
 tqdm = '*'
 meshio = '*'
+conda = ">=26.7.2,<27"
 # cupy = '*'
 # cuda-nvcc = '*'
 
@@ -102,15 +110,27 @@ dill = "*"
 datoviz = "*"
 # tatva = '*'
 
+[tool.pixi.package.run-dependencies]
+spyder-kernels = "==3.1"
+matplotlib = "*"
+numba = "<0.66"
+numpy = "<2.5"
+pandas = "*"
+scipy = "*"
+scikit-sparse = "*"
+ipyparallel = "*"
+ipykernel = '*'
+pytables = '*'
+tqdm = '*'
+meshio = '*'
+dill = "*"
+pip = '*'
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
 dev = { features = ["dev"], solve-group = "default" }
 docs = { features = ["docs"], solve-group = "default" }
 test = { features = ["test"], solve-group = "default" }
-
-[tool.pixi.tasks]
-run = "pixi run python -m ipykernel install --user --name treillis-pixi --display-name 'treillis'"
 
 
 [tool.conda-deny]

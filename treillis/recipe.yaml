@@ -1,0 +1,40 @@
+{% set version = "1.0" %}
+
+package:
+  name: treillis
+  version: {{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/t/treillis/treillis-{{ version }}.tar.gz
+  sha256: 70f8bac859c2c571cafef0c02425cb8ab55a9716f816713d8d96479b296ee5b2
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python >=3.11,<=3.14
+    - pip
+  run:
+    - python >=3.11,<=3.14
+
+test:
+  imports:
+    - treillis
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}.*
+
+about:
+  home: https://pypi.org/project/treillis/
+  summary: A comprehensive library to generate and simulate 2D/3D microlattices.
+  license: LGPL-3.0-only
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - 4nile

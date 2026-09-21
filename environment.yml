@@ -16,8 +16,7 @@ dependencies:
 - meshio *
 - python >=3.11,<=3.14
 - pip
+- dill
 - pip:
-  - -e .
-  - dill
   - datoviz
 
