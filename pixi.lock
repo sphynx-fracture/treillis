@@ -10535,6 +10535,20 @@ packages:
   timestamp: 1786599623274
 - pypi: ./
   name: treillis
+  requires_dist:
+  - matplotlib
+  - numba<0.66
+  - numpy<2.5
+  - pandas
+  - scipy
+  - scikit-sparse
+  - ipyparallel
+  - ipykernel
+  - tables
+  - tqdm
+  - meshio
+  - dill
+  - datoviz
   requires_python: '>=3.11,<=3.14'
 - pypi: https://files.pythonhosted.org/packages/01/f9/575c8d760eae1fc99651b7cc5efd96ad5379ca4d6b53750b0fb4fe983f34/imagesize-2.0.1-py3-none-any.whl
   name: imagesize

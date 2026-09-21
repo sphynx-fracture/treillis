@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: treillis
-Version: 1.0
+Version: 1.2
 Summary: A comprehensive library to generate and simulate 2D/3D microlattices.
 Author: Antoine Montiel, Thibaud Derieux, Aurélien Mur
 Author-email: Elina Gilbert <elina.gilbert@cea.fr>, Daniel Bonamy <daniel.bonamy@cea.fr>
@@ -17,6 +17,19 @@ Classifier: Programming Language :: Python
 Requires-Python: <=3.14,>=3.11
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numba<0.66
+Requires-Dist: numpy<2.5
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: scikit-sparse
+Requires-Dist: ipyparallel
+Requires-Dist: ipykernel
+Requires-Dist: tables
+Requires-Dist: tqdm
+Requires-Dist: meshio
+Requires-Dist: dill
+Requires-Dist: datoviz
 Dynamic: license-file
 
 ![treillis logo](docs/source/_static/logo.png)

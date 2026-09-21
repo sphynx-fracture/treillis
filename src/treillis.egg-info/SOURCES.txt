@@ -5,6 +5,7 @@ src/treillis/__init__.py
 src/treillis.egg-info/PKG-INFO
 src/treillis.egg-info/SOURCES.txt
 src/treillis.egg-info/dependency_links.txt
+src/treillis.egg-info/requires.txt
 src/treillis.egg-info/top_level.txt
 src/treillis/_generation/__init__.py
 src/treillis/_generation/cutting.py

@@ -1,0 +1,13 @@
+matplotlib
+numba<0.66
+numpy<2.5
+pandas
+scipy
+scikit-sparse
+ipyparallel
+ipykernel
+tables
+tqdm
+meshio
+dill
+datoviz

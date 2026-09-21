@@ -1,6 +1,6 @@
 [tool.pixi.package]
 name = "treillis"
-version = "1.0"
+version = "1.2"
 publish = false
 
 [tool.pixi.package.build.backend]
@@ -26,7 +26,7 @@ preview = ["pixi-build"]
 
 [project]
   name = "treillis"
-  version = "1.0"
+  version = "1.2"
   license = "LGPL-3.0"
   license-files = ["LICENSE"]
   description = "A comprehensive library to generate and simulate 2D/3D microlattices."
@@ -57,6 +57,20 @@ preview = ["pixi-build"]
 	# Specify the Python versions you support here.
 	"Programming Language :: Python",
 ]
+  dependencies = [
+   "matplotlib",
+   "numba <0.66",
+   "numpy <2.5",
+   "pandas",
+   "scipy",
+   "scikit-sparse",
+   "ipyparallel",
+   "ipykernel",
+   "tables",
+   "tqdm",
+   "meshio",
+   "dill",
+   "datoviz"]
 
 
 [project.urls]
@@ -101,30 +115,11 @@ pytables = '*'
 tqdm = '*'
 meshio = '*'
 conda = ">=26.7.2,<27"
-# cupy = '*'
-# cuda-nvcc = '*'
 
 [tool.pixi.pypi-dependencies]
 treillis = { path = ".", editable = true }
 dill = "*"
 datoviz = "*"
-# tatva = '*'
-
-[tool.pixi.package.run-dependencies]
-spyder-kernels = "==3.1"
-matplotlib = "*"
-numba = "<0.66"
-numpy = "<2.5"
-pandas = "*"
-scipy = "*"
-scikit-sparse = "*"
-ipyparallel = "*"
-ipykernel = '*'
-pytables = '*'
-tqdm = '*'
-meshio = '*'
-dill = "*"
-pip = '*'
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
@@ -149,5 +144,5 @@ lockfile = "environment/pixi.lock" # or ["environment1/pixi.lock", "environment2
 #--------------------------------------------------------
 safe-licenses = ["MIT", "BSD-3-Clause"]
 ignore-packages = [
-    { package = "make", version = "0.1.0" },
+    { package = "make", version = "0.1.2" },
 ]
