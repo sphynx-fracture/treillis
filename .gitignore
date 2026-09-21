@@ -111,3 +111,7 @@
 /src/treillis/_generation/some_lattices/164
 /src/treillis/_generation/some_lattices/137
 /src/treillis/_generation/some_lattices/136
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+/.pixi
