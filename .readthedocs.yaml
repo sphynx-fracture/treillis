@@ -10,7 +10,7 @@ build:
   tools:
     python: mambaforge-latest
   jobs:
-    pre_builds:
+    pre_build:
       - mamba install -c conda-forge -c nodefaults pixi
       - pixi install -e docs
     # - pixi run docs
