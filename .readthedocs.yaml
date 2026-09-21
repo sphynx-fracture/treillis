@@ -9,16 +9,9 @@ build:
   os: ubuntu-24.04
   tools:
     python: mambaforge-latest
-  jobs:
-    pre_build:
-      - mamba install -c conda-forge -c nodefaults pixi
-      - pixi install -e docs
-    # - pixi run docs
-    # - pixi run readthedocs
-    # You can also specify other tool versions:
-    # nodejs: "20"
-    # rust: "1.70"
-    # golang: "1.20"
+      
+conda:
+  environement: environment.yml
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:

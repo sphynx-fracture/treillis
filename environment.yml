@@ -1,0 +1,36 @@
+name: docs
+channels:
+- conda-forge
+- nodefaults
+dependencies:
+- spyder-kernels ==3.1
+- matplotlib *
+- numba <0.66
+- numpy <2.5
+- pandas *
+- scipy *
+- scikit-sparse *
+- ipyparallel *
+- ipykernel *
+- pytables *
+- tqdm *
+- meshio *
+- python >=3.11,<=3.14
+- pip
+- pip:
+  - sphinx
+  - myst-parser
+  - sphinx-gallery
+  - nbsphinx
+  - pydata-sphinx-theme
+  - deflist
+  - replacements
+  - tasklist
+  - sphinx-copybutton
+  - sphinx-design
+  - numpydoc
+  - sphobjinv
+  - sphinx-tabs
+  - -e .
+  - dill
+  - datoviz
