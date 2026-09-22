@@ -116,3 +116,6 @@
 !.pixi/config.toml
 /.pixi
 /dist
+build
+/*.conda
+/metadata.json
