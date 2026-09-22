@@ -16,4 +16,4 @@ Install the latest version of [Pixi](https://pixi.prefix.dev/latest/), open a co
 
 
 ## Pypi
-Due to a packing error in scikit-sparse, installation fails from Pypi. We are working on changing the interactive plotting to VisPy to allow conda installation.
+In your environment, write `pip install treillis==1.4`

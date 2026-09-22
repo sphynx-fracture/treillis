@@ -1,19 +1,142 @@
-[tool.pixi.package]
-name = "treillis"
-version = "1.3"
-publish = false
+# [tool.pixi.package]
+# name = "treillis"
+# version = "1.3"
+# publish = false
 
-[tool.pixi.package.build.backend]
-name = "pixi-build-python"
-# channel = "https.prefix.dev/conda-forge"
+# [tool.pixi.package.build.backend]
+# name = "pixi-build-python"
+# # channel = "https.prefix.dev/conda-forge"
 
-[tool.pixi.package.build.config]
-ignore-pypi-mapping = true
+# [tool.pixi.package.build.config]
+# ignore-pypi-mapping = true
 
-[tool.pixi.package.host-dependencies]
-python = ">=3.11"
-hatchling = '*'
-setuptools = '*'
+# [tool.pixi.package.host-dependencies]
+# python = ">=3.11"
+# hatchling = '*'
+# setuptools = '*'
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/treillis/", "*.csv"]
+exclude = ["*/__pycache__", "*/.spyproject",
+           "src/treillis/_generation/some_lattices/125",
+            "src/treillis/_generation/some_lattices/28",
+            "src/treillis/_generation/some_lattices/29",
+            "src/treillis/_generation/some_lattices/30",
+            "src/treillis/_generation/some_lattices/31",
+            "src/treillis/_generation/some_lattices/32",
+            "src/treillis/_generation/some_lattices/33",
+            "src/treillis/_generation/some_lattices/34",
+            "src/treillis/_generation/some_lattices/35",
+            "src/treillis/_generation/some_lattices/36",
+            "src/treillis/_generation/some_lattices/37",
+            "src/treillis/_generation/some_lattices/38",
+            "src/treillis/_generation/some_lattices/39",
+            "src/treillis/_generation/some_lattices/40",
+            "src/treillis/_generation/some_lattices/41",
+            "src/treillis/_generation/some_lattices/42",
+            "src/treillis/_generation/some_lattices/43",
+            "src/treillis/_generation/some_lattices/44",
+            "src/treillis/_generation/some_lattices/45",
+            "src/treillis/_generation/some_lattices/46",
+            "src/treillis/_generation/some_lattices/47",
+            "src/treillis/_generation/some_lattices/48",
+            "src/treillis/_generation/some_lattices/49",
+            "src/treillis/_generation/some_lattices/50",
+            "src/treillis/_generation/some_lattices/51",
+            "src/treillis/_generation/some_lattices/52",
+            "src/treillis/_generation/some_lattices/53",
+            "src/treillis/_generation/some_lattices/54",
+            "src/treillis/_generation/some_lattices/55",
+            "src/treillis/_generation/some_lattices/56",
+				"src/treillis/_generation/some_lattices/57",
+				"src/treillis/_generation/some_lattices/58",
+				"src/treillis/_generation/some_lattices/59",
+				"src/treillis/_generation/some_lattices/60",
+				"src/treillis/_generation/some_lattices/61",
+				"src/treillis/_generation/some_lattices/62",
+				"src/treillis/_generation/some_lattices/63",
+				"src/treillis/_generation/some_lattices/64",
+				"src/treillis/_generation/some_lattices/65",
+				"src/treillis/_generation/some_lattices/66",
+				"src/treillis/_generation/some_lattices/67",
+				"src/treillis/_generation/some_lattices/68",
+				"src/treillis/_generation/some_lattices/69",
+				"src/treillis/_generation/some_lattices/70",
+				"src/treillis/_generation/some_lattices/71",
+				"src/treillis/_generation/some_lattices/72",
+				"src/treillis/_generation/some_lattices/73",
+				"src/treillis/_generation/some_lattices/74",
+				"src/treillis/_generation/some_lattices/75",
+				"src/treillis/_generation/some_lattices/76",
+				"src/treillis/_generation/some_lattices/77",
+				"src/treillis/_generation/some_lattices/78",
+				"src/treillis/_generation/some_lattices/79",
+				"src/treillis/_generation/some_lattices/80",
+				"src/treillis/_generation/some_lattices/81",
+				"src/treillis/_generation/some_lattices/82",
+				"src/treillis/_generation/some_lattices/83",
+				"src/treillis/_generation/some_lattices/84",
+				"src/treillis/_generation/some_lattices/85",
+				"src/treillis/_generation/some_lattices/86",
+				"src/treillis/_generation/some_lattices/87",
+				"src/treillis/_generation/some_lattices/88",
+				"src/treillis/_generation/some_lattices/89",
+				"src/treillis/_generation/some_lattices/90",
+				"src/treillis/_generation/some_lattices/91",
+				"src/treillis/_generation/some_lattices/92",
+				"src/treillis/_generation/some_lattices/93",
+				"src/treillis/_generation/some_lattices/94",
+				"src/treillis/_generation/some_lattices/95",
+				"src/treillis/_generation/some_lattices/96",
+				"src/treillis/_generation/some_lattices/97",
+				"src/treillis/_generation/some_lattices/98",
+				"src/treillis/_generation/some_lattices/99",
+				"src/treillis/_generation/some_lattices/100",
+				"src/treillis/_generation/some_lattices/101",
+				"src/treillis/_generation/some_lattices/102",
+				"src/treillis/_generation/some_lattices/103",
+				"src/treillis/_generation/some_lattices/104",
+				"src/treillis/_generation/some_lattices/105",
+				"src/treillis/_generation/some_lattices/106",
+				"src/treillis/_generation/some_lattices/107",
+				"src/treillis/_generation/some_lattices/108",
+				"src/treillis/_generation/some_lattices/109",
+				"src/treillis/_generation/some_lattices/110",
+				"src/treillis/_generation/some_lattices/111",
+				"src/treillis/_generation/some_lattices/112",
+				"src/treillis/_generation/some_lattices/113",
+				"src/treillis/_generation/some_lattices/114",
+				"src/treillis/_generation/some_lattices/115",
+				"src/treillis/_generation/some_lattices/116",
+				"src/treillis/_generation/some_lattices/117",
+				"src/treillis/_generation/some_lattices/118",
+				"src/treillis/_generation/some_lattices/119",
+				"src/treillis/_generation/some_lattices/120",
+				"src/treillis/_generation/some_lattices/121",
+				"src/treillis/_generation/some_lattices/122",
+				"src/treillis/_generation/some_lattices/123",
+				"src/treillis/_generation/some_lattices/124",
+				"src/treillis/_generation/some_lattices/150",
+				"src/treillis/_generation/some_lattices/152",
+				"src/treillis/_generation/some_lattices/154",
+				"src/treillis/_generation/some_lattices/156",
+				"src/treillis/_generation/some_lattices/157",
+				"src/treillis/_generation/some_lattices/158",
+				"src/treillis/_generation/some_lattices/159",
+				"src/treillis/_generation/some_lattices/160",
+				"src/treillis/_generation/some_lattices/161",
+				"src/treillis/_generation/some_lattices/162",
+				"src/treillis/_generation/some_lattices/163",
+				"src/treillis/_generation/some_lattices/164",
+				"src/treillis/_generation/some_lattices/137",
+				"src/treillis/_generation/some_lattices/136"]
+
+[tool.hatch.build]
+directory = "hatch-build/"
 
 [workspace]
 name = "treillis"
@@ -21,11 +144,11 @@ description = "A comprehensive library to generate and simulate 2D/3D microlatti
 authors = ["Antoine Montiel", "Elina Gilbert", "Thibaud Derieux","Daniel Bonamy","Aurelien Mur"]
 channels = ["conda-forge"]
 platforms = ["win-64", "linux-64"]
-preview = ["pixi-build"]
+# preview = ["pixi-build"]
 
 [project]
   name = "treillis"
-  version = "1.3"
+  version = "1.4"
   license = "LGPL-3.0"
   license-files = ["LICENSE"]
   description = "A comprehensive library to generate and simulate 2D/3D microlattices."
@@ -143,5 +266,5 @@ lockfile = "environment/pixi.lock" # or ["environment1/pixi.lock", "environment2
 #--------------------------------------------------------
 safe-licenses = ["MIT", "BSD-3-Clause"]
 ignore-packages = [
-    { package = "make", version = "1.3" },
+    { package = "make", version = "1.4" },
 ]
