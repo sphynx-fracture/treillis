@@ -1052,7 +1052,7 @@ def frompacking(pack: np.ndarray, lattype: str, size: np.ndarray,
 
                     args = [[f, elems_save, nodes_save, length] for f in faces];
                     res = dview.map_async(node_mod, args);
-                    res.wait_interact()
+                    res.wait_interactive()
                     
                     for i in range(len(res)):
                         r = res[i]

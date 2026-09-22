@@ -48,17 +48,23 @@ It was written by experimental physicists with the language that they know, and 
 
 Install
 -------
-### From source
-Download the repository.
-Create a new conda environment, and install the needed packages in `environment.yml`, then move `src/treillis` to the `lib/site-packages` folder of your environment.
+### Install from the source as editable
+Clone the repository.
+
+#### Using Pixi
+Install the latest version of [Pixi](https://pixi.prefix.dev/latest/), open a command terminal in the folder root and input `pixi shell`.
+
+#### Using pip or conda
+- Open a conda command terminal in the folder root.
+- Create the treillis environment from environment.yml with
+```conda env create --name treillis --file=environment.yml```
+- install treillis in the environment as editable
+   - with pip: `pip install -e .`
+   - with conda: `conda install conda-build; conda develop .`
 
 
 ### Pypi
-
-Create a new environment and copy
-```
-pip install treillis
-```
+Due to a packing error in scikit-sparse, installation fails from Pypi. We are working on changing the interactive plotting to VisPy to allow conda installation.
 
 Documentation
 -------------

@@ -113,7 +113,7 @@ ipykernel = '*'
 pytables = '*'
 tqdm = '*'
 meshio = '*'
-conda = ">=26.7.2,<27"
+vispy = "*"
 
 [tool.pixi.pypi-dependencies]
 treillis = { path = ".", editable = true }
