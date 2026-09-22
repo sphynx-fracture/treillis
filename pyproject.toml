@@ -1,6 +1,6 @@
 [tool.pixi.package]
 name = "treillis"
-version = "1.2"
+version = "1.3"
 publish = false
 
 [tool.pixi.package.build.backend]
@@ -8,11 +8,10 @@ name = "pixi-build-python"
 # channel = "https.prefix.dev/conda-forge"
 
 [tool.pixi.package.build.config]
-env = { SETUPTOOLS_SCM_PRETEND_VERSION = "1.0.0" }
 ignore-pypi-mapping = true
 
 [tool.pixi.package.host-dependencies]
-python = ">=3.11,<=3.14"
+python = ">=3.11"
 hatchling = '*'
 setuptools = '*'
 
@@ -26,7 +25,7 @@ preview = ["pixi-build"]
 
 [project]
   name = "treillis"
-  version = "1.2"
+  version = "1.3"
   license = "LGPL-3.0"
   license-files = ["LICENSE"]
   description = "A comprehensive library to generate and simulate 2D/3D microlattices."
@@ -41,7 +40,7 @@ preview = ["pixi-build"]
   maintainers = [
   {name = "Elina Gilbert", email = "elina.gilbert@cea.fr"},
   ]
-  requires-python = ">=3.11,<=3.14"
+  requires-python = ">=3.11"
   classifiers = [
 	# How mature is this project? Common values are
 	"Development Status :: 3 - Alpha",
@@ -144,5 +143,5 @@ lockfile = "environment/pixi.lock" # or ["environment1/pixi.lock", "environment2
 #--------------------------------------------------------
 safe-licenses = ["MIT", "BSD-3-Clause"]
 ignore-packages = [
-    { package = "make", version = "0.1.2" },
+    { package = "make", version = "1.3" },
 ]

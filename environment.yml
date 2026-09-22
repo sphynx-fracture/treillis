@@ -14,7 +14,7 @@ dependencies:
 - pytables *
 - tqdm *
 - meshio *
-- python >=3.11,<=3.14
+- python >=3.11
 - pip
 - dill
 - pip:
