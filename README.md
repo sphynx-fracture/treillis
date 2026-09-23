@@ -1,7 +1,7 @@
-![treillis logo](docs/source/_static/logo.png)
+![treillis](long_logo.png)
 
-*treillis*: lattices generation and simulation
-==============================================
+Lattices generation and simulation
+==================================
 
 *treillis* (/tʁɛji/, French for truss) is a Python library built to help researchers and whoever is interested in microlattices. It provides tools to modelize 2D and 3D microlattices, to compute their elastic properties as well as calculate stresses, strains and elastic constants.
 It was written by experimental physicists with the language that they know, and may need some optimization work, but aims at being as easy to use and iterate on as possible.
