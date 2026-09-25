@@ -1,6 +1,6 @@
 ![treillis](long_logo.png)
 
-![(https://treillis.readthedocs.io/)](https://app.readthedocs.org/projects/treillis/badge/?&style=flat-default "https://treillis.readthedocs.io/")
+![[](https://treillis.readthedocs.io/)](https://app.readthedocs.org/projects/treillis/badge/?&style=flat-default)
 ![PyPI License](https://img.shields.io/pypi/l/treillis)
 ![PyPI Status](https://img.shields.io/pypi/status/treillis)
 
