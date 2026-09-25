@@ -8689,7 +8689,6 @@ packages:
   - scipy
   - scikit-sparse
   - ipyparallel
-  - ipykernel
   - tables
   - tqdm
   - meshio

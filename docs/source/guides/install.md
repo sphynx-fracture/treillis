@@ -46,10 +46,10 @@ Because the mechanics module of *treillis* is based on [scikit-sparse](https://g
 >
 > It is recommended that you install SuiteSparse and the scikit-sparse dependencies in a virtual environment, to avoid conflicts with other packages. We recommend using Anaconda:
 >
->     ```
+>  ```
 >    $ conda create -n scikit-sparse python>=3.10 suitesparse
 >    $ conda activate scikit-sparse
->     ```
+>  ```
 >
 >If you are not using Anaconda, you can install SuiteSparse using your preferred package manager.
 >
@@ -57,16 +57,16 @@ Because the mechanics module of *treillis* is based on [scikit-sparse](https://g
 >
 >  ```
 >    $ brew install suite-sparse
->     ```
+>  ```
 >
 >On Debian/Ubuntu systems, use the following command:
 >
->     ```
+>  ```
 >    $ sudo apt-get install python-scipy libsuitesparse-dev
->     ```
+>  ```
 >
 >On Arch Linux, run:
 >
->     ```
+>  ```
 >    $ sudo pacman -S suitesparse
->     ```
+>  ```
