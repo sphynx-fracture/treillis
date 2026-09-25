@@ -187,7 +187,6 @@ platforms = ["win-64", "linux-64"]
    "scipy",
    "scikit-sparse",
    "ipyparallel",
-   "ipykernel",
    "tables",
    "tqdm",
    "meshio",
@@ -232,7 +231,6 @@ pandas = "*"
 scipy = "*"
 scikit-sparse = "*"
 ipyparallel = "*"
-ipykernel = '*'
 pytables = '*'
 tqdm = '*'
 meshio = '*'
