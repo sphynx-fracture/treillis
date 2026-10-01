@@ -1,8 +1,8 @@
 ![treillis](long_logo.png)
 
-![[](https://treillis.readthedocs.io/)](https://app.readthedocs.org/projects/treillis/badge/?&style=flat-default)
-![PyPI License](https://img.shields.io/pypi/l/treillis)
-![PyPI Status](https://img.shields.io/pypi/status/treillis)
+<img alt="Read the Docs" src="https://app.readthedocs.org/projects/treillis/badge/?&style=flat-default&link=https%3A%2F%2Ftreillis.readthedocs.io">
+<img alt="License" src="https://img.shields.io/pypi/l/treillis?link=https%3A%2F%2www.gnu.orgF%2licensesF%2lgpl-3.0.en.html">
+<img alt="Pypi status" src="https://img.shields.io/pypi/status/treillis?link=https%3A%2F%2pypi.orgF%2classifiers">
 
 
 
