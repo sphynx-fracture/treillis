@@ -1,8 +1,8 @@
 ![treillis](long_logo.png)
 
-<object data="https://img.shields.io/readthedocs/treillis?style=flat&link=https://treillis.readthedocs.io"></object>
-<object data="https://img.shields.io/pypi/l/treillis?link=https://www.gnu.org/licenses/lgpl-3.0.en.html"></object>
-<object data="https://img.shields.io/pypi/status/treillis?link=https://pypi.org/classifiers"></object>
+<a href="https://treillis.readthedocs.io"><img alt="Read the Docs" src="https://app.readthedocs.org/projects/treillis/badge/?&style=flat-default&link=https%3A%2F%2Ftreillis.readthedocs.io"></a>
+<a href="https://www.gnu.org/licenses/lgpl-3.0.en.html"><img alt="License" src="https://img.shields.io/pypi/l/treillis?link=https%3A%2F%2www.gnu.orgF%2licensesF%2lgpl-3.0.en.html"></a>
+<a href="https://pypi.org/classifiers"><img alt="Pypi status" src="https://img.shields.io/pypi/status/treillis?link=https%3A%2F%2pypi.orgF%2classifiers"></a>
 
 
 
