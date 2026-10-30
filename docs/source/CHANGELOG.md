@@ -4,25 +4,27 @@ All notable changes to treillis will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
  
-## [1.0.0] - 2026-01-dd
+## [1.4.2] - 2026-10
  
-Organizing the package to make it as legible and easy to use as possible for future release.
+Trying to fix some bugs that impact cross-OS reproducibility and overall lattice generation.
  
 ### Added
 
-- package admin is now done with [pixi](https://pixi.prefix.dev/latest/)
+- Added this changelog, sorry for not doing it earlier, and I can't guarantee I will update it consistantly!
+- Added `tbb` to the environment.yml so that numba will work reproducibly between Windows and Unix systems 
  
 ### Changed
 
-- organized the docs for easier writing between automatically generated docstrings and manually added methods
-- [IN PROGRESS] changing all names to check [PEP8](https://peps.python.org/pep-0008/)
 
 ### Fixed
 
+- array beam sections should not raise a syntax error anymore when manipulating the lattices
+
 ### To-Do
 
-- fix compatibility issues with Linux from incompatible wheels that are not up-to-date with Python >3.10
-- update docs
-- add PyTorch calculations
-- push to Deplab/GitLab
+- simplify installation by doing a deep-dive in conda recipes and making one that works from the get-go
 - add tomography-like visualization in 3D
+- convince colleagues and students to learn Python and git so that I am not the only one maintaining this repo anymore
+- add a change_box method to lattices to keep behavior consistent when flattening the boundaries instead of having to update all related parameters by hand
+- would be great if I could find a way to encode them properly in some CAD software to play with and print without intersecting faces
+- [major] update `fast_display` to the latest Datoviz OR Vispy when stable

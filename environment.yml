@@ -6,6 +6,7 @@ dependencies:
 - matplotlib *
 - numba <0.66
 - numpy <2.5
+- tbb
 - pandas *
 - scipy *
 - scikit-sparse *
