@@ -76,7 +76,7 @@ Site map
    User Guide <guides/index>
    API references <api_guide/index>
    Examples <auto_examples/index>
-
+   Changelog <CHANGELOG.md>
 
 About
 -----
