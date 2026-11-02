@@ -665,16 +665,32 @@ def get_S(faces, nodes, length):
     
     for If in prange(len(faces)):
         f = faces[If]
-        # f = f[np.isfinite(f)]
-        cont = np.sum(np.sqrt(np.sum((nodes[f[1:]] - nodes[f[:-1]])**2,
-                                     axis=1)))
-        cont += np.sqrt(np.sum((nodes[f[0]] - nodes[f[-1]])**2))
-        S[If] += cont / (1.3*length*.7 * len(f))
+        T = [(f[i], f[i+1], f[-1]) for i in range(0,len(f)-2)]
+        s = 0
+        for t in T:
+            a = np.sqrt(np.sum((nodes[t[1]] - nodes[t[0]])**2))
+            b = np.sqrt(np.sum((nodes[t[2]] - nodes[t[1]])**2))
+            c = np.sqrt(np.sum((nodes[t[0]] - nodes[t[2]])**2))
+            s += np.sqrt((a**2+b**2+c**2)**2
+                         -2*(a**4+b**4+c**4))/4
+        
+        S[If] += s # sum of the areas
+        S[If] /= (len(f)*length**2 / 4*np.tan(np.pi/len(f))) # comparison to regular polygon of side length
     return S
 
 
 def node_mod(arg):
     import numpy as np
+    
+    def area(T, nodes):
+        s = 0
+        for t in T:
+            a = np.sqrt(np.sum((nodes[t[1]] - nodes[t[0]])**2))
+            b = np.sqrt(np.sum((nodes[t[2]] - nodes[t[1]])**2))
+            c = np.sqrt(np.sum((nodes[t[0]] - nodes[t[2]])**2))
+            s += np.sqrt((a**2+b**2+c**2)**2
+                         -2*(a**4+b**4+c**4))/4
+        return s
     
     def v_init(face, eo, nodes):  
         v = np.zeros((len(face), 3), np.float64)
@@ -686,51 +702,35 @@ def node_mod(arg):
                 v[i] = np.sum(nodes[e1,:], axis=0)/len(e1) - nodes[e0]
         return v
         
-    def cont_init(face, nodes):
-        ctr = np.sum(nodes[face], axis=0)/len(face)
-        vecs = nodes[face] - ctr
-        vecs /= np.stack((np.sqrt(np.sum(vecs**2, axis=1)),
-                          np.sqrt(np.sum(vecs**2, axis=1)),
-                          np.sqrt(np.sum(vecs**2, axis=1))), axis=1)
-        
-        cont = np.sum(np.sqrt(np.sum((nodes[face[1:]] - nodes[face[:-1]])**2, 
-                                     axis=1)))
-        cont += np.sqrt(np.sum((nodes[face[0]] - nodes[face[-1]])**2))
-        return cont
-    
-    def incr_cont(n):
-        cont = np.sum(np.sqrt(np.sum((n[1:] - n[:-1])**2,
-                                     axis=1)))
-        cont += np.sqrt(np.sum((n[0] - n[-1])**2))
-        return cont
-    
     def incr_nodes(nodes, v, length):
         n = nodes + v/length/10
         return n
     
     f, elems, nodes, length = arg
+    T = [(f[i], f[i+1], f[-1]) for i in range(0,len(f)-2)]
+    cont = area(T, nodes)
+        
     elt = elems[np.sum(np.isin(elems, f), axis=1, dtype=bool)]
     eo = elt[np.prod(np.isin(elt, f), axis=1)!=1]
     
     v = v_init(f, eo, nodes)
-    cont = cont_init(f, nodes)
     
     ii = 0 
     mod = v/length/10
 
-    while ii<10 and cont < 1.33*length*.7 * len(f):
-        n = incr_nodes(nodes[f], v, length)
-        cont = incr_cont(n)
-        mod = v/length/10        
+    while ii<10 and cont/(len(f)*length**2 / 4*np.tan(np.pi/len(f))) < 1:
+        nodes[f] += v/length/10
+        T = [(i, i+1, len(f)-1) for i in range(len(f)-2)]
+        cont = area(T, nodes[f])
         v = v_init(f, eo, nodes)
-        l = np.sqrt(np.sum((n-np.roll(n, 1, axis=0))**2, axis=1))
+        l = np.sqrt(np.sum((nodes[f]-np.roll(nodes[f], 1, axis=0))**2, axis=1))
         v[l>1.5*length] = 0
-        v[np.roll(l, 1)>1.3*length] = 0
+        mod = v/length/10 
+        mod[f<0] = 0
         ii += 1
         if (mod==0).all(): ii=10
-        
-    s = cont/(1.33*length*.7* len(f))
-    return [s, mod]
+    
+    return [cont, mod]
 
 # %% Lattice generation
 
