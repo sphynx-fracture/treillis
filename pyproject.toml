@@ -148,7 +148,7 @@ platforms = ["win-64", "linux-64"]
 
 [project]
   name = "treillis"
-  version = "1.4.2"
+  version = "1.4.3"
   license = "LGPL-3.0"
   license-files = ["LICENSE"]
   description = "A comprehensive library to generate and simulate 2D/3D microlattices."
@@ -264,5 +264,5 @@ lockfile = "environment/pixi.lock" # or ["environment1/pixi.lock", "environment2
 #--------------------------------------------------------
 safe-licenses = ["MIT", "BSD-3-Clause"]
 ignore-packages = [
-    { package = "make", version = "1.4.2" },
+    { package = "make", version = "1.4.3" },
 ]
