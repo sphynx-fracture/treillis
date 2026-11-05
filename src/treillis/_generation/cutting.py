@@ -295,7 +295,7 @@ def isolate(lattice: Lattice):
         
         elm = keep_elem(lattice.elems, idx)
         
-        if type(lattice.beam_section)!=str: 
+        if not isinstance(lattice.beam_section, str): 
             beam = lattice.beam_section[mask_elm]
         else: beam = lattice.beam_section
         

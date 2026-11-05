@@ -180,10 +180,11 @@ class Element:
         
     @property
     def section_area(self):
-        if self.beam_section == 'Circular':
-            section_area = np.pi * (self.L/self.aspect_ratio/2)**2
-        if self.beam_section == 'Square':
-            section_area = (self.L/self.aspect_ratio)**2
+        if isinstance(self.beam_section, str):
+            if self.beam_section == 'Circular':
+                section_area = np.pi * (self.L/self.aspect_ratio/2)**2
+            if self.beam_section == 'Square':
+                section_area = (self.L/self.aspect_ratio)**2
         if isinstance(self.beam_section, np.ndarray):
             section_area = np.sum(self.beam_section, axis=(0, 1))\
                 * (self.L/self.aspect_ratio / self.beam_section.shape[0])**2  
@@ -1014,21 +1015,22 @@ class Spring(Element):
         self.dof = lattice.dim
         Element.__init__(self, lattice, self.dof, location)
 
-        if self.beam_section == "Square":
-            I = ((self.L / self.aspect_ratio) ** 4) / 12  # for square beam
-            # corrective term for Timoshenko's beam
-            if Timoshenko:
-                self.alpha = 2 * 6/5 * (1 + nu) / \
+        if isinstance(self.beam_section, str):
+            if self.beam_section == "Square":
+                I = ((self.L / self.aspect_ratio) ** 4) / 12  # for square beam
+                # corrective term for Timoshenko's beam
+                if Timoshenko:
+                    self.alpha = 2 * 6/5 * (1 + nu) / \
+                        (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
+                    self.inertia = I
+                        
+            if self.beam_section == "Circular":
+                I = (np.pi / 64) * (self.L / self.aspect_ratio) ** 4
+                # corrective term for Timoshenko's beam
+                if Timoshenko:
+                    self.alpha = 1.5 * 10/9 * (1 + nu) / \
                     (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
-                self.inertia = I
-                    
-        if self.beam_section == "Circular":
-            I = (np.pi / 64) * (self.L / self.aspect_ratio) ** 4
-            # corrective term for Timoshenko's beam
-            if Timoshenko:
-                self.alpha = 1.5 * 10/9 * (1 + nu) / \
-                (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
-                self.inertia = I
+                    self.inertia = I
 
         if isinstance(self.beam_section, np.ndarray):
             I = np.array([inertia(self.beam_section[:,:,i], 
@@ -1490,19 +1492,20 @@ class Beam(Element):
         Element.__init__(self, lattice, self.dof, location)
         self.L = lattice.L
         self.type = 'Beam'
-        if self.beam_section == "Square":
-            I = ((self.L / self.aspect_ratio) ** 4) / 12  # for square beam
-            S = (self.L / self.aspect_ratio)**2
-            # corrective term for Timoshenko's beam
-            self.alpha = 2 * 6/5 * (1 + nu) / \
+        if isinstance(self.beam_section, str):
+            if self.beam_section == "Square":
+                I = ((self.L / self.aspect_ratio) ** 4) / 12  # for square beam
+                S = (self.L / self.aspect_ratio)**2
+                # corrective term for Timoshenko's beam
+                self.alpha = 2 * 6/5 * (1 + nu) / \
+                    (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
+                        
+            if self.beam_section == "Circular":
+                I = (np.pi / 64) * (self.L / self.aspect_ratio) ** 4
+                S = np.pi * (lattice.L / (2 * self.aspect_ratio)) ** 2
+                # corrective term for Timoshenko's beam
+                self.alpha = 1.5 * 10/9 * (1 + nu) / \
                 (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
-                    
-        if self.beam_section == "Circular":
-            I = (np.pi / 64) * (self.L / self.aspect_ratio) ** 4
-            S = np.pi * (lattice.L / (2 * self.aspect_ratio)) ** 2
-            # corrective term for Timoshenko's beam
-            self.alpha = 1.5 * 10/9 * (1 + nu) / \
-            (self.aspect_ratio * self.elems[:, 2] / self.L) ** 2
 
         if isinstance(self.beam_section, np.ndarray):
             I = np.array([inertia(self.beam_section[:,:,i], 
@@ -1540,6 +1543,7 @@ class Beam(Element):
             
         K_e1 = np.stack([stiffness.beam_1(self.dim) 
                          for _ in range(self.elems.shape[0])], axis=-1)
+        print(K_e1.dtype)
         if self.dim == 3:
             K_e5 = np.stack([stiffness.beam_5()
                              for _ in range(self.elems.shape[0])], axis=-1)

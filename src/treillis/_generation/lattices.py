@@ -247,12 +247,13 @@ def Density(lattice):
                           nodes[elems[:,1].astype(int),1])**2 +\
                              (nodes[elems[:,0].astype(int),2] -\
                               nodes[elems[:,1].astype(int),2])**2) - D
-
-        if lattice.beam_section == 'Square':
-            volbeam = np.sum(L_beam**3/ar**2)
-
-        elif lattice.beam_section == 'Circular':
-            volbeam  = np.sum(L_beam**3 * np.pi /(4*ar**2))
+        
+        if isinstance(lattice.beam_section, str):
+            if lattice.beam_section == 'Square':
+                volbeam = np.sum(L_beam**3/ar**2)
+    
+            elif lattice.beam_section == 'Circular':
+                volbeam  = np.sum(L_beam**3 * np.pi /(4*ar**2))
         elif isinstance(lattice.beam_section, np.ndarray):
             volbeam = np.sum(L_beam * np.sum(lattice.beam_section)\
                              * (L_beam/ar / lattice.beam_section.shape[0])**2)
@@ -341,12 +342,13 @@ def Density2(lattice):
                         * np.sum(beam_section[linked[0]]))
         return v
     
-    if lattice.beam_section == 'Square' or lattice.dim == 2:
-        volume += square(lattice.nodes, lattice.elems, fixed,
-                         lattice.node_section, lattice.dim, lattice.length)
-    elif lattice.beam_section == 'Circular':
-        volume += circ(lattice.nodes, lattice.elems, fixed,
-                         lattice.node_section, lattice.dim, lattice.length)
+    if isinstance(lattice.beam_section, str):
+        if lattice.beam_section == 'Square' or lattice.dim == 2:
+            volume += square(lattice.nodes, lattice.elems, fixed,
+                             lattice.node_section, lattice.dim, lattice.length)
+        elif lattice.beam_section == 'Circular':
+            volume += circ(lattice.nodes, lattice.elems, fixed,
+                             lattice.node_section, lattice.dim, lattice.length)
     elif isinstance(lattice.beam_section, np.ndarray):
         volume += other(lattice.nodes, lattice.elems, fixed,
                          lattice.node_section, lattice.beam_section, 

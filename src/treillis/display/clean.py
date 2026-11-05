@@ -730,7 +730,8 @@ def displacement(nodes_init: np.ndarray, displ: np.ndarray,
                   nodes_init[:,1],
                   nodes_init[:,2],
                   displ[:,0], displ[:,1], displ[:,2],
-                  color = cmap(norm(values)), scale=1, scale_units='xy')
+                  color = cmap(norm(values)), 
+                  linewidth= (values.mean()/np.ptp(nodes_init,axis=0).mean())*20)
         
         ax.view_init(azim=-60, elev=35)
         ax.set_zticks([])
