@@ -200,24 +200,24 @@ def loadLattice(filepath)-> Lattice:
     
     # load h5
     if '.h5' in filepath:
-        file = tb.open_file(filepath, 'r')
-        nodes = file.root.nodes[:]
-        elems = file.root.elements[:]
-        size = file.root.size[:]
-        if file.root.parameters.col('L').size > 0:
-            length = None
-        else:
-            length = float(file.root.parameters.col('L')[0])
-        if file.root.parameters.col('mesh').size > 0:
-            inimesh = None
-        else:
-            inimesh = str(file.root.parameters.col('mesh')[0])
-        aspect_ratio = file.root.ratio[:]
-        fixed = file.root.fixed_nodes[:]
-        if file.root.parameters.col('section')[0].astype(str) == 'array':
-            section = file.root.section[:]
-        else:
-            section = file.root.parameters.col('section')[0].astype(str)
+        with tb.open_file(filepath, 'r') as file:
+            nodes = file.root.nodes[:]
+            elems = file.root.elements[:]
+            size = file.root.size[:]
+            if file.root.parameters.col('L').size > 0:
+                length = None
+            else:
+                length = float(file.root.parameters.col('L')[0])
+            if file.root.parameters.col('mesh').size > 0:
+                inimesh = None
+            else:
+                inimesh = str(file.root.parameters.col('mesh')[0])
+            aspect_ratio = file.root.ratio[:]
+            fixed = file.root.fixed_nodes[:]
+            if file.root.parameters.col('section')[0].astype(str) == 'array':
+                section = file.root.section[:]
+            else:
+                section = file.root.parameters.col('section')[0].astype(str)
         return Lattice(nodes, elems, size=size, length=length, inimesh=inimesh,
                        aspect_ratio=aspect_ratio, beam_section=section,
                        fixed_nodes=fixed)

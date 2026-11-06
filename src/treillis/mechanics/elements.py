@@ -143,7 +143,6 @@ class Element:
         
         self.crack = np.ones((1, 2)) * np.nan
         
-        print(location)
         if location != 'off':
             if location is None: location = os.getcwd()
             self.mempath = os.path.abspath(location + r'/' + 'memory.h5')
@@ -1543,7 +1542,6 @@ class Beam(Element):
             
         K_e1 = np.stack([stiffness.beam_1(self.dim) 
                          for _ in range(self.elems.shape[0])], axis=-1)
-        print(K_e1.dtype)
         if self.dim == 3:
             K_e5 = np.stack([stiffness.beam_5()
                              for _ in range(self.elems.shape[0])], axis=-1)

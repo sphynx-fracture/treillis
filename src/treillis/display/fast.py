@@ -451,11 +451,12 @@ def showlat(lattice, box = True, axis = True,
             Z = nodes[lattice.fixed_nodes, 2].\
                 reshape((len(lattice.fixed_nodes),1))
 
+        r = lattice.fixed_nodes.shape[0]/lattice.nodes.shape[0]/norm
+
         XYZ = np.concatenate((X,Y,Z), axis=1)
         lim = app.sphere(position=XYZ,
                         color=[[0, 147, 157, 255]]*len(X),
-                        size=lattice.L/lattice.aspect_ratio/15,
-                                         depth_test=True)
+                        size=r, depth_test=True)
         panel.add(lim)
 
     if box:
