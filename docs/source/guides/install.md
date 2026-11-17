@@ -1,5 +1,5 @@
-Install
--------
+# Install
+
 Ideally, if we had time and more experience with Python and building packages in general, the requirements would be much lighter. As is, *treillis* requires:
 
 - [Python](http://python.org/) >= 3.11
@@ -15,31 +15,19 @@ Ideally, if we had time and more experience with Python and building packages in
 - [pytables](https://www.pytables.org/)
 - [scikit sparse](https://scikit-sparse.readthedocs.io/)
 
-### Install from the source as editable
-Clone the repository.
+## Conda/pip (recommended)
 
-#### Using Pixi
-Install the latest version of [Pixi](https://pixi.prefix.dev/latest/), open a command terminal in the folder root and input `pixi shell`.
-
-#### Using conda
-Because *treillis* uses [Datoviz](https://datoviz.org/) for 3D interactive plotting, which does not yet have a conda release, you need to create the environment before being able to install
-
-- Open a conda command terminal in the folder root.
-- Create the treillis environment from environment.yml with
-
-```conda env create --name <YOUR ENVT NAME> --file=environment.yml```
-
-- activate the environment `conda activate <YOUR ENVT NAME>`
-- install *treillis* in the environment as editable with 
+You first need to create the environment with the correct dependencies for *treillis* to work. In order to do that, download the [environment.yml](environment.yml) file, then
 
 ```
-conda install conda-build
-conda develop .
+conda env create -n <YOUR ENVT NAME> --file=environment.yml
+conda activate <YOUR ENVT NAME>
+pip install treillis
 ```
 
-OR install *treillis* with `conda install treillis`
+Yes, it usually is not recommended to use both conda and pip, but I have not worked out how to make a good conda recipe yet.
 
-### Pypi
+## Pypi
 Because the mechanics module of *treillis* is based on [scikit-sparse](https://github.com/scikit-sparse/scikit-sparse), it has the same issues with pip install: SuiteSparse needs to be setup first before building the package. Hence, the next paragraph is copied from the scikit-sparse documentation:
 
 > To install `scikit-sparse`, you need to have the [SuiteSparse](https://people.engr.tamu.edu/davis/suitesparse.html) library installed on your system.
@@ -70,3 +58,27 @@ Because the mechanics module of *treillis* is based on [scikit-sparse](https://g
 >  ```
 >    $ sudo pacman -S suitesparse
 >  ```
+
+## Install from the source as editable
+Clone the repository.
+
+### Using Pixi
+Install the latest version of [Pixi](https://pixi.prefix.dev/latest/), open a command terminal in the folder root and input `pixi shell`.
+
+### Using conda
+Because *treillis* uses [Datoviz](https://datoviz.org/) for 3D interactive plotting, which does not yet have a conda release, you need to create the environment before being able to install
+
+- Open a conda command terminal in the folder root.
+- Create the treillis environment from environment.yml with
+
+```conda env create --name <YOUR ENVT NAME> --file=environment.yml```
+
+- activate the environment `conda activate <YOUR ENVT NAME>`
+- install *treillis* in the environment as editable with 
+
+```
+conda install conda-build
+conda develop .
+```
+
+OR install *treillis* with `conda install treillis`
