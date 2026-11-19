@@ -35,7 +35,7 @@ More complex examples with various functionalities
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This script is a nice twin to the structural isotropy test &lt;plot_isotropy&gt; structural isotropy test, as we perform some simple mechanical tests over a lattice to evaluate its mechanical isotropy in the linear domain.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This script is a nice twin to the structural isotropy test structural isotropy test, as we perform some simple mechanical tests over a lattice to evaluate its mechanical isotropy in the linear domain.">
 
 .. only:: html
 

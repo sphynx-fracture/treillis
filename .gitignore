@@ -119,3 +119,6 @@
 build
 /*.conda
 /metadata.json
+/src/treillis.egg-info
+*/.spyproject
+*/__pycache__
